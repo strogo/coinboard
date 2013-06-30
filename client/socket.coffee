@@ -70,9 +70,9 @@ TransactionSocket.init = ->
 
         while i < outputs.length
           i++
-        setTimeout (->
-          new Transaction(bitcoins)
-        ), Math.random() * DELAY_CAP
+        #setTimeout (->
+        #  new Transaction(bitcoins)
+        #), Math.random() * DELAY_CAP
       else if data.op is "block"
         blockHeight = data.x.height
         transactions = data.x.nTx
@@ -127,9 +127,9 @@ TradeSocket.init = ->
         bitcoins = message.trade.amount_int / satoshi
         currency = (message.trade.price * message.trade.amount_int / satoshi)
         currencyName = message.trade.price_currency
-        setTimeout (->
-          new Transaction(bitcoins, false, currency, currencyName)
-        ), Math.random() * DELAY_CAP
+        #setTimeout (->
+        #  new Transaction(bitcoins, false, currency, currencyName)
+        #), Math.random() * DELAY_CAP
   else
 
     #WebSockets are not supported.

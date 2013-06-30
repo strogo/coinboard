@@ -9,7 +9,22 @@
 <template name="hello">
   <h1>coinboard</h1>
 
-  <h2>Transactions</h2>
+  
+  <h2>ticker</h2>
+  <table>
+  {{#each ticker}}
+  <tr>
+    <td>{{timestamp}}</td>
+    <td>{{last}}</td>
+  </tr>
+  {{/each}}
+  </table>
+
+  <h2>EURUSD</h2>
+  {{eurusd}}
+
+
+  <h2>transactions</h2>
   {{#each transactions}}
   <li>{{value}}
   {{/each}}
