@@ -1,0 +1,4 @@
+
+
+Meteor.startup ->
+  TransactionSocket.init()
