@@ -14,11 +14,17 @@
 # Filter out the orphaned blocks.
 
 #WebSockets are not supported.
+
 TradeSocket = ->
+
 satoshi = 100000000
 DELAY_CAP = 1000
+
 lastBlockHeight = 0
+
 @TransactionSocket = ->
+
+@transactionsShown = []
 
 TransactionSocket.init = ->
   @connection.close()  if @connection
@@ -56,6 +62,8 @@ TransactionSocket.init = ->
           i++
         bitcoins = transacted / satoshi
         console.log "Transaction: " + bitcoins + " BTC"
+        transactionsShown.push bitcoins
+        Session.set 'newTransaction', Meteor.uuid()
         donation = false
         outputs = data.x.out
         i = 0
