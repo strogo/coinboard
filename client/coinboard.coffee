@@ -4,18 +4,19 @@
 
 
 
-Template.hello.ticker = ->
+Template.coinboard.ticker = ->
   Ticker.find {}
 
 
-Template.hello.eurusd = ->
-  #f = Conversion.find {}
-  #(f.sell + f.buy) / 2.
+Template.coinboard.eurusd = ->
+  f = Conversion.findOne {}
+  if f
+    (parseFloat(f.sell) + parseFloat(f.buy)) / 2
 
 
 
 
-Template.hello.transactions = ->
+Template.coinboard.transactions = ->
   Session.get 'newTransaction'
   t = _.clone transactionsShown
   _.map t.reverse(), (x) ->
