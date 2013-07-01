@@ -5,7 +5,11 @@
 
 
 Template.coinboard.ticker = ->
-  Ticker.find {}
+  ticks = Ticker.find({}, { sort: {datetime: -1 }}).fetch()
+  _.map ticks, (x) ->
+    x.datetime = moment.unix(x.timestamp).from()
+    x
+
 
 
 Template.coinboard.eurusd = ->

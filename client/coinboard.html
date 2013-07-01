@@ -3,32 +3,47 @@
 </head>
 
 <body>
-  {{> coinboard}}
+  <div class="container">
+    {{> coinboard}}
+  </div>
 </body>
 
 <template name="coinboard">
   <h1>coinboard</h1>
 
   
-  <h2>ticker</h2>
-  <table>
-  {{#each ticker}}
-  <tr>
-    <td>{{timestamp}}</td>
-    <td>{{last}}</td>
-  </tr>
-  {{/each}}
-  </table>
+  <div class="row">
+    <div class="span6">
+      <h2>ticker</h2>
+      <table>
+        {{#each ticker}}
+        <tr>
+          <td>{{datetime}}</td>
+          <td>{{ask}}</td>
+          <td>{{bid}}</td>
+          <td>{{high}}</td>
+          <td>{{last}}</td>
+          <td>{{low}}</td>
+          <td>{{volume}}</td>
+        </tr>
+        {{/each}}
+      </table>
+    </div>
 
-  <h2>EURUSD</h2>
-  {{eurusd}}
-
-
-  <h2>transactions</h2>
-  {{#each transactions}}
-  <li>{{value}}
-  {{/each}}
-
+    <div class="span2">
+      <h2>EURUSD</h2>
+      {{eurusd}}
+    </div>
+    
+    <div class="span4">
+      <h2>transactions</h2>
+      {{#each transactions}}
+      <div>{{value}}</div>
+      {{/each}}
+    </div>
+  </div>
+  
   <div id="blockchainStatus"></div>
   <div id="mtgoxStatus"></div>
+
 </template>
