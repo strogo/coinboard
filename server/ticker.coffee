@@ -6,7 +6,7 @@ Conversion = new Meteor.Collection 'conversion'
 
 Meteor.startup ->
   updateData()
-  Meteor.setInterval updateData, 60 * 1000
+  Meteor.setInterval updateData, 10 * 60 * 1000
 
 
 updateData = ->

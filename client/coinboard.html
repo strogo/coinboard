@@ -15,7 +15,19 @@
   <div class="row">
     <div class="span6">
       <h2>ticker</h2>
+
+      {{> canvas}}
+
       <table>
+        <tr>
+          <th>time</th>
+          <th>ask</th>
+          <th>bid</th>
+          <th>high</th>
+          <th>last</th>
+          <th>low</th>
+          <th>volume</th>
+        </tr>
         {{#each ticker}}
         <tr>
           <td>{{datetime}}</td>
@@ -46,4 +58,11 @@
   <div id="blockchainStatus"></div>
   <div id="mtgoxStatus"></div>
 
+</template>
+
+
+<template name="canvas">
+  {{#isolate}}
+  <canvas id="myChart" width="400" height="200"></canvas>
+  {{/isolate}}
 </template>
