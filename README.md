@@ -1,6 +1,16 @@
 
 
-This will be a Bitcoin information dashboard.
+This is a Bitcoin information dashboard in progress, built with <a
+href="http://meteor.com/">Meteor</a> and CoffeeScript.
+
+Currently implemented:
+* bitstamp BTCUSD BTCEUR ticker
+* current BTC transactions
+
+TODO:
+* charts
+* show past transactions
+* only show transactions from specific address
 
 
 
