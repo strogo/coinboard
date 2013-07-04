@@ -18,6 +18,8 @@ getTicks = ->
     x.last = convert x.last
     x.low = convert x.low
     x
+  ticks = _.sortBy ticks, (x) ->
+    -x.timestamp
 
 Template.coinboard.ticker = ->
   getTicks()
