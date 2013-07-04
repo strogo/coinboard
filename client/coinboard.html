@@ -18,6 +18,10 @@
 
       {{> canvas}}
 
+      <div class="btn-group">
+        <button class="btn">USD 1</button>
+        <button class="btn btn-success">EURUSD {{eurusd}}</button>
+      </div>
       <table>
         <tr>
           <th>time</th>
@@ -42,12 +46,7 @@
       </table>
     </div>
 
-    <div class="span2">
-      <h2>EURUSD</h2>
-      {{eurusd}}
-    </div>
-    
-    <div class="span4">
+    <div class="span6">
       <h2>transactions</h2>
       {{#each transactions}}
       <div>{{value}}</div>
