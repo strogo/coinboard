@@ -17,10 +17,7 @@ Template.coinboard.currencyIs = (cur) ->
 getTicks = ->
   # limit: 10 doesn't work, possibly because sort doesn't work
   ticks = Ticker.find({}, { sort: {datetime: -1 }}).fetch()
-  if Session.equals 'currency', 'EURUSD'
-    rate = getEURUSD()
-  else
-    rate = 1
+  rate = if Session.equals 'currency', 'EURUSD' then getEURUSD() else 1
   convert = (v) ->
     (v / rate).toFixed(2)
   ticks = _.sortBy ticks, (x) ->
@@ -45,6 +42,9 @@ getEURUSD = ->
     (parseFloat(f.sell) + parseFloat(f.buy)) / 2
 
 
+Meteor.startup ->
+  Session.set 'currency', 'EURUSD'
+
 Template.coinboard.eurusd = ->
   getEURUSD()
 
@@ -57,15 +57,5 @@ Template.coinboard.transactions = ->
   _.map t.reverse(), (x) ->
     value: x
 
-
-@myNewChart = null
-@ctx = null
-@data = null
-
-@drawChart = ->
-
-
-Meteor.startup ->
-  Session.set 'currency', 'EURUSD'
 
 

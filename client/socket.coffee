@@ -61,7 +61,7 @@ TransactionSocket.init = ->
           transacted += data.x.out[i].value
           i++
         bitcoins = transacted / satoshi
-        console.log "Transaction: " + bitcoins + " BTC"
+        # console.log "Transaction: " + bitcoins + " BTC"
         transactionsShown.push bitcoins
         Session.set 'newTransaction', Meteor.uuid()
         donation = false
