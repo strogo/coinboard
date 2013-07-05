@@ -30,14 +30,13 @@
       y: r.ask
   ]
 
+Meteor.setTimeout ->
+  addGraph(tickData)
+, 1000
 
-Meteor.startup ->
-  addGraph()
-
-addGraph = ->
+@addGraph = (fnData) ->
   nv.addGraph ->
-    # testdata = tickData()
-    testdata = exampleData()
+    testdata = fnData()
     chart = nv.models.linePlusBarChart().margin(
       top: 30
       right: 60
@@ -46,6 +45,7 @@ addGraph = ->
     ).x((d, i) -> i).color(d3.scale.category10().range())
     chart.xAxis.tickFormat (d) ->
       dx = testdata[0].values[d] and testdata[0].values[d].x or 0
+
       d3.time.format("%x") new Date(dx)
 
     chart.y1Axis.tickFormat d3.format(",f")

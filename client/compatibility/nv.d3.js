@@ -1170,7 +1170,7 @@ nv.models.bulletChart = function() {
         return '<h3>' + x + '</h3>' +
                '<p>' + y + '</p>'
       }
-    , noData = 'No Data Available.'
+    , noData = 'No Data Available. 1173'
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide')
     ;
 
@@ -1515,7 +1515,7 @@ nv.models.cumulativeLineChart = function() {
     , id = lines.id()
     , state = { index: 0, rescaleY: rescaleY }
     , defaultState = null
-    , noData = 'No Data Available.'
+    , noData = 'No Data Available. 1518'
     , average = function(d) { return d.average }
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'stateChange', 'changeState')
     ;
@@ -2520,7 +2520,7 @@ nv.models.discreteBarChart = function() {
       }
     , x
     , y
-    , noData = "No Data Available."
+    , noData = "No Data Available. 2523"
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'beforeUpdate')
     ;
 
@@ -3252,7 +3252,7 @@ nv.models.historicalBarChart = function() {
     , y
     , state = {}
     , defaultState = null
-    , noData = 'No Data Available.'
+    , noData = 'No Data Available. 3255'
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'stateChange', 'changeState')
     ;
 
@@ -3655,7 +3655,7 @@ nv.models.indentedTree = function() {
     , id = Math.floor(Math.random() * 10000)
     , header = true
     , filterZero = false
-    , noData = "No Data Available."
+    , noData = "No Data Available. 3658"
     , childIndent = 20
     , columns = [{key:'key', label: 'Name', type:'text'}] //TODO: consider functions like chart.addColumn, chart.removeColumn, instead of a block like this
     , tableClass = null
@@ -4480,7 +4480,7 @@ nv.models.lineChart = function() {
     , y
     , state = {}
     , defaultState = null
-    , noData = 'No Data Available.'
+    , noData = 'No Data Available. 4483'
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'stateChange', 'changeState')
     ;
 
@@ -4902,7 +4902,7 @@ nv.models.linePlusBarChart = function() {
     , y2
     , state = {}
     , defaultState = null
-    , noData = "No Data Available."
+    , noData = "No Data Available. 4905"
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'stateChange', 'changeState')
     ;
 
@@ -5359,7 +5359,7 @@ nv.models.lineWithFocusChart = function() {
         return '<h3>' + key + '</h3>' +
                '<p>' +  y + ' at ' + x + '</p>'
       }
-    , noData = "No Data Available."
+    , noData = "No Data Available. 5362"
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'brush')
     ;
 
@@ -5928,7 +5928,7 @@ nv.models.linePlusBarWithFocusChart = function() {
     , y2
     , y3
     , y4
-    , noData = "No Data Available."
+    , noData = "No Data Available. 5931"
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'brush')
     ;
 
@@ -7024,7 +7024,7 @@ nv.models.multiBarChart = function() {
     , y //can be accessed via chart.yScale()
     , state = { stacked: false }
     , defaultState = null
-    , noData = "No Data Available."
+    , noData = "No Data Available. 7027"
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'stateChange', 'changeState')
     , controlWidth = function() { return showControls ? 180 : 0 }
     ;
@@ -7948,7 +7948,7 @@ nv.models.multiBarHorizontalChart = function() {
     , y //can be accessed via chart.yScale()
     , state = { stacked: stacked }
     , defaultState = null
-    , noData = 'No Data Available.'
+    , noData = 'No Data Available. 7951'
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'stateChange', 'changeState')
     , controlWidth = function() { return showControls ? 180 : 0 }
     ;
@@ -9583,7 +9583,7 @@ nv.models.pieChart = function() {
       }
     , state = {}
     , defaultState = null
-    , noData = "No Data Available."
+    , noData = "No Data Available. 9586"
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'stateChange', 'changeState')
     ;
 
@@ -10561,7 +10561,7 @@ nv.models.scatterChart = function() {
     , state = {}
     , defaultState = null
     , dispatch     = d3.dispatch('tooltipShow', 'tooltipHide', 'stateChange', 'changeState')
-    , noData       = "No Data Available."
+    , noData       = "No Data Available. 10564"
     ;
 
   scatter
@@ -11174,7 +11174,7 @@ nv.models.scatterPlusLineChart = function() {
     , state = {}
     , defaultState = null
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'stateChange', 'changeState')
-    , noData       = "No Data Available."
+    , noData       = "No Data Available. 11177"
     ;
 
   scatter
@@ -11947,7 +11947,7 @@ nv.models.sparklinePlus = function() {
     , showValue = true
     , alignValue = true
     , rightAlignValue = false
-    , noData = "No Data Available."
+    , noData = "No Data Available. 11950"
     ;
 
   //============================================================
@@ -12585,7 +12585,7 @@ nv.models.stackedAreaChart = function() {
     , yAxisTickFormat = d3.format(',.2f')
     , state = { style: stacked.style() }
     , defaultState = null
-    , noData = 'No Data Available.'
+    , noData = 'No Data Available. 12588'
     , dispatch = d3.dispatch('tooltipShow', 'tooltipHide', 'stateChange', 'changeState')
     , controlWidth = 250
     ;
