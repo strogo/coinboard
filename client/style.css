@@ -4,4 +4,14 @@ table td {
 
 footer {
   margin-top: 20px;
+  border-top: 1px dotted #ccc;
+  text-align: center;
+}
+
+header {
+  border-bottom: 1px dotted #ccc;
+}
+
+#rates td:first-child {
+  text-align: right;
 }

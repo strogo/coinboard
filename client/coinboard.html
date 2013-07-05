@@ -6,25 +6,27 @@
   <div class="container">
     {{> coinboard}}
     <footer>
-      created by <a href="http://guaka.org/">guaka</a>, <a href="http://github.com/guaka/coinboard">code at github</a>
+      <a href="http://guaka.org/">created by guaka</a> | <a href="http://github.com/guaka/coinboard">code at github</a> | <a href="http://github.com/guaka/coinboard/issues/new">feature requests welcome</a>
     </footer>
   </div>
 </body>
 
 <template name="coinboard">
-  <h1>coinboard.net</h1>
   
   <div class="row">
+    <header>
+      <h1><a href="http://coinboard.net/">coinboard.net</a></h1>
+    </header>
     <div class="span6">
       <h2>ticker</h2>
 
-      {{> canvas}}
+      {{> chart}}
 
       <div class="btn-group">
         <button class="btn {{#if currencyIs 'USD'}}btn-success{{/if}}" value="USD">USD 1</button>
         <button class="btn {{#if currencyIs 'EURUSD'}}btn-success{{/if}}" value="EURUSD">EURUSD {{eurusd}}</button>
       </div>
-      <table>
+      <table id="rates">
         <tr>
           <th>time</th>
           <th>ask</th>
@@ -62,8 +64,3 @@
 </template>
 
 
-<template name="canvas">
-  {{#isolate}}
-  <canvas id="myChart" width="400" height="200"></canvas>
-  {{/isolate}}
-</template>

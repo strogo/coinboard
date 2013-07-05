@@ -11,7 +11,8 @@ TODO:
 * charts
 * show past transactions
 * only show transactions from specific address
-
+* LTC
+* more fiat currencies?
 
 
 
