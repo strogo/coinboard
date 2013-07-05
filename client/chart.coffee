@@ -30,9 +30,10 @@
       y: r.ask
   ]
 
-Meteor.setTimeout ->
+Meteor.setInterval ->
+  console.log 'Redrawing graph. TODO: handle with autorun or subscribe'
   addGraph(tickData)
-, 1000
+, 3000
 
 @addGraph = (fnData) ->
   nv.addGraph ->
