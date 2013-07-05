@@ -1,6 +1,6 @@
 
-
-This is a Bitcoin information dashboard in progress, built with <a
+<a href="http://coinboard.net/">Coinboard.net</a> is a Bitcoin
+information dashboard in progress, built with <a
 href="http://meteor.com/">Meteor</a> and CoffeeScript.
 
 Currently implemented:

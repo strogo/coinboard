@@ -2,25 +2,29 @@
 @Ticker = new Meteor.Collection 'ticker'
 @Conversion = new Meteor.Collection 'conversion'
 
-@currency = 'EURUSD'
+Meteor.startup ->
+  Session.set 'currency', 'EURUSD'
 
 
 Template.coinboard.events
   'click button': (evt) ->
     el = evt.toElement
-    currency = el.value
-
+    Session.set 'currency', el.value
 
 Template.coinboard.currencyIs = (cur) ->
-  cur is currency
+  Session.equals 'currency', cur
+
 
 
 getTicks = ->
   # limit: 10 doesn't work, possibly because sort doesn't work
   ticks = Ticker.find({}, { sort: {datetime: -1 }}).fetch()
-  eurusd = getEURUSD()
+  if Session.equals 'currency', 'EURUSD'
+    rate = getEURUSD()
+  else
+    rate = 1
   convert = (v) ->
-    (v / eurusd).toFixed(2)
+    (v / rate).toFixed(2)
   ticks = _.sortBy ticks, (x) ->
     -x.timestamp
   ticks = ticks.slice 0, 10
