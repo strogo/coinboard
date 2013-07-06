@@ -1,14 +1,13 @@
-
 <a href="http://coinboard.net/">Coinboard.net</a> is a Bitcoin
 information dashboard in progress, built with <a
 href="http://meteor.com/">Meteor</a> and CoffeeScript.
 
 Currently implemented:
 * bitstamp BTCUSD BTCEUR ticker
+* charts
 * current BTC transactions
 
 TODO:
-* charts
 * show past transactions
 * only show transactions from specific address
 * LTC
